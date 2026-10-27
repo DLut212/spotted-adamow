@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotted: Adamów | Świętokrzyskie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>ADAMÓW</h1>
+        <p class="subtitle">Spotted: Adamów (woj. świętokrzyskie)</p>
+        <nav>
+            <ul>
+                <li><a href="#dodaj-wpis">Dodaj wpis</a></li>
+                <li><a href="#historia">Historia Adamowa</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <!-- Sekcja: Dodaj wpis -->
+        <section id="dodaj-wpis" class="card">
+            <h2>Dodaj wpis</h2>
+            <p>Widziałeś coś ciekawego w Adamowie? Chcesz kogoś pozdrowić lub zapytać? Wyślij anonimowy wpis!</p>
+            <form id="spotted-form">
+                <label for="autor">Twoje imię / Pseudonim (opcjonalnie):</label>
+                <input type="text" id="autor" placeholder="Anonim">
+
+                <label for="tresc">Treść wpisu:</label>
+                <textarea id="tresc" rows="4" placeholder="Wpisz tutaj swoją wiadomość..." required></textarea>
+
+                <button type="submit">Wyślij wpis</button>
+            </form>
+            <div id="form-msg"></div>
+        </section>
+
+        <!-- Sekcja: Historia Adamowa -->
+        <section id="historia" class="card">
+            <h2>Historia Adamowa</h2>
+            <p>Adamów to urokliwa miejscowość położona w województwie świętokrzyskim. Znana z pięknych krajobrazów, bogatej tradycji oraz gościnnych mieszkańców.</p>
+            <p>Historia naszej lokalnej społeczności sięga wieków wstecz, połączona z rozwojem regionu świętokrzyskiego, lokalnym rolnictwem i rzemiosłem.</p>
+        </section>
+
+        <!-- Sekcja: Blog -->
+        <section id="blog" class="card">
+            <h2>Blog lokalny</h2>
+            <article class="post">
+                <h3>Witamy na nowej stronie Spotted Adamów!</h3>
+                <span class="date">Opublikowano: Dzisiaj</span>
+                <p>Uruchomiliśmy oficjalny serwis dla mieszkańców Adamowa i okolic. Możesz tu przeglądać aktualności i dzielić się wiadomościami z sąsiadami.</p>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; Spotted Adamów, woj. świętokrzyskie. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        document.getElementById('spotted-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const msg = document.getElementById('form-msg');
+            msg.innerText = 'Dziękujemy! Twój wpis został wysłany do weryfikacji.';
+            msg.style.color = 'green';
+            this.reset();
+        });
+    </script>
+</body>
+</html>
